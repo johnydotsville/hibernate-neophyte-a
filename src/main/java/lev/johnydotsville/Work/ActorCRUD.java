@@ -13,7 +13,8 @@ import lev.johnydotsville.Helpers.HibernateHelper;
 
 public class ActorCRUD {
     public void save(Actor actor) {
-        Session session = HibernateHelper.getSessionFactory().openSession();session.beginTransaction();
+        Session session = HibernateHelper.getSessionFactory().openSession();
+        session.beginTransaction();
         session.persist(actor);
         session.flush();
         session.close();
